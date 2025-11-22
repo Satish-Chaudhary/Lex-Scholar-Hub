@@ -51,6 +51,16 @@ header {
     padding: 15px 0;
 }
 
+.navbar-collapse {
+    justify-content: center;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    background-color: #fff !important;
+}
+
 .navbar-brand {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
@@ -147,12 +157,25 @@ header {
     background: linear-gradient(rgba(12, 35, 64, 0.8), rgba(12, 35, 64, 0.8)), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 150px 0 100px;
+    }
+}
+
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
     color: white;
     padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        max-width: 100%;
+    }
 }
 
 .hero-content h1 {
@@ -314,9 +337,34 @@ section {
     color: var(--maroon);
 }
 
+@media (max-width: 768px) {
+    .highlight-image {
+        height: 150px;
+    }
+
+    .highlight-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .highlight-image {
+        height: 120px;
+    }
+}
+
 /* Testimonials Section */
 .testimonials {
     background-color: var(--light-blue);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .testimonial-card {
@@ -324,14 +372,16 @@ section {
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .testimonial-content {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    flex: 1;
 }
 
 .testimonial-image {
@@ -350,6 +400,8 @@ section {
 
 .testimonial-text {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .testimonial-text p {
@@ -357,6 +409,7 @@ section {
     margin-bottom: 15px;
     line-height: 1.6;
     color: #555;
+    flex: 1;
 }
 
 .testimonial-author {
@@ -372,6 +425,59 @@ section {
 .testimonial-rating {
     color: var(--gold);
     margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .testimonial-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .testimonial-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .testimonial-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .testimonial-card {
+        padding: 15px;
+    }
+
+    .testimonial-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .testimonial-text p {
+        font-size: 0.95rem;
+    }
 }
 
 /* Articles Section */
@@ -497,6 +603,49 @@ section {
     color: var(--maroon);
 }
 
+@media (max-width: 768px) {
+    .article-image {
+        height: 180px;
+    }
+
+    .article-content {
+        padding: 20px;
+    }
+
+    .article-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .article-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .article-image {
+        height: 150px;
+    }
+
+    .article-content {
+        padding: 15px;
+    }
+
+    .article-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .filter-buttons {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.85rem;
+    }
+}
+
 /* Internships Section */
 .internships {
     background-color: var(--gray);
@@ -577,6 +726,49 @@ section {
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .internship-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .internship-content {
+        padding: 15px;
+    }
+
+    .internship-detail {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .internship-detail i {
+        margin-right: 0;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .internship-header {
+        padding: 12px 15px;
+    }
+
+    .internship-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .internship-content {
+        padding: 12px;
+    }
+
+    .internship-tags {
+        gap: 5px;
+    }
+
+    .internship-tag {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
 }
 
 /* Courses Section */
@@ -713,6 +905,74 @@ section {
     margin-right: 5px;
 }
 
+@media (max-width: 768px) {
+    .course-image {
+        height: 160px;
+    }
+
+    .course-content {
+        padding: 15px;
+    }
+
+    .course-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .course-instructor {
+        margin-bottom: 12px;
+    }
+
+    .course-detail {
+        font-size: 0.85rem;
+    }
+
+    .course-price {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .course-image {
+        height: 140px;
+    }
+
+    .course-content {
+        padding: 12px;
+    }
+
+    .course-content h3 {
+        font-size: 1rem;
+    }
+
+    .course-instructor img {
+        width: 35px;
+        height: 35px;
+        margin-right: 8px;
+    }
+
+    .course-instructor-name {
+        font-size: 0.9rem;
+    }
+
+    .course-instructor-title {
+        font-size: 0.75rem;
+    }
+
+    .course-detail {
+        font-size: 0.8rem;
+    }
+
+    .course-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .course-price {
+        font-size: 1rem;
+    }
+}
+
 /* Competitions Section */
 .competitions {
     background-color: var(--gray);
@@ -817,6 +1077,59 @@ section {
     color: var(--dark-gray);
 }
 
+@media (max-width: 768px) {
+    .competition-header {
+        height: 130px;
+    }
+
+    .competition-content {
+        padding: 15px;
+    }
+
+    .competition-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .competition-detail {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .competition-detail i {
+        margin-right: 0;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .competition-header {
+        height: 110px;
+    }
+
+    .competition-type {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+    }
+
+    .competition-content {
+        padding: 12px;
+    }
+
+    .competition-content h3 {
+        font-size: 1rem;
+    }
+
+    .competition-prize {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .competition-prize i {
+        font-size: 1rem;
+    }
+}
+
 /* Blogs Section */
 .blogs {
     background-color: white;
@@ -912,6 +1225,49 @@ section {
     color: var(--maroon);
 }
 
+@media (max-width: 768px) {
+    .blog-image {
+        height: 160px;
+    }
+
+    .blog-content {
+        padding: 15px;
+    }
+
+    .blog-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .blog-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .blog-image {
+        height: 140px;
+    }
+
+    .blog-content {
+        padding: 12px;
+    }
+
+    .blog-content h3 {
+        font-size: 1rem;
+    }
+
+    .blog-content p {
+        font-size: 0.9rem;
+    }
+
+    .blog-category {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+    }
+}
+
 /* About Section */
 .about {
     background-color: var(--light-blue);
@@ -984,6 +1340,8 @@ section {
 .member-image {
     height: 250px;
     overflow: hidden;
+    object-fit: cover;
+    object-position: top;
 }
 
 .member-image img {
@@ -1040,6 +1398,60 @@ section {
 .member-social a:hover {
     background-color: var(--navy-blue);
     color: white;
+}
+
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .about-text h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .member-image {
+        height: 200px;
+    }
+
+    .member-info {
+        padding: 15px;
+    }
+
+    .member-info h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-image {
+        height: 250px;
+    }
+
+    .member-info {
+        padding: 20px;
+    }
+
+    .member-social a {
+        width: 32px;
+        height: 32px;
+    }
 }
 
 /* Contact Section */
@@ -1183,6 +1595,72 @@ textarea.form-control {
     background-color: var(--light-gold);
 }
 
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 25px;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .contact-info,
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-item i {
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .newsletter {
+        padding: 30px 20px;
+    }
+
+    .newsletter h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-control {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    textarea.form-control {
+        min-height: 100px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input {
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+
+    .newsletter-form button {
+        border-radius: 30px;
+    }
+}
+
 /* Footer */
 footer {
     background-color: var(--navy-blue);
@@ -1310,9 +1788,19 @@ footer {
 }
 
 /* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
 @media (max-width: 992px) {
     .hero-content h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 
     .about-content {
@@ -1322,6 +1810,10 @@ footer {
     .contact-container {
         grid-template-columns: 1fr;
     }
+
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
@@ -1330,13 +1822,20 @@ footer {
         padding: 20px 0;
     }
 
+    .navbar-collapse {
+        background-color: rgba(12, 35, 64, 0.95);
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
     .search-bar {
         max-width: 100%;
         margin: 20px 0;
     }
 
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .hero-content p {
@@ -1344,34 +1843,88 @@ footer {
     }
 
     .section-title h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     section {
-        padding: 60px 0;
+        padding: 50px 0;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+    }
+
+    .course-instructor {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .course-instructor img {
+        margin-bottom: 10px;
+    }
+
+    .newsletter {
+        padding: 30px 20px;
+    }
+
+    .newsletter h3 {
+        font-size: 1.5rem;
+    }
+
+    .footer-column h3 {
+        font-size: 1.4rem;
+    }
+
+    .social-links a {
+        width: 38px;
+        height: 38px;
     }
 }
 
 @media (max-width: 576px) {
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .hero-content p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .btn-custom {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 8px 15px;
+        font-size: 0.85rem;
+        margin: 5px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 
     .section-title h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
+    }
+
+    .footer-column h3 {
+        font-size: 1.3rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .social-links a {
+        width: 35px;
+        height: 35px;
     }
 
     .newsletter-form {
@@ -1385,5 +1938,26 @@ footer {
 
     .newsletter-form button {
         border-radius: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 20px;
+    }
+
+    .member-info {
+        padding: 15px;
+    }
+
+    .member-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .member-role {
+        font-size: 0.9rem;
+    }
+
+    .member-bio {
+        font-size: 0.8rem;
     }
 }
